@@ -2,65 +2,23 @@
 <html lang="zh-Hant">
 <head>
  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
- <meta name="theme-color" content="#112b48"><title>資金需求線上評估</title>
- <link rel="stylesheet" href="base.css?v=20261106-k-olive-original"><link rel="stylesheet" href="notice.css?v=20261106-k-olive-original"><link rel="stylesheet" href="ice.css?v=20261106-k-olive-original"><link rel="stylesheet" href="blue-gold.css?v=20261108-1">
- <link rel="stylesheet" href="blue-gold-finish.css?v=20261108-activity">
- <script src="../repo-pixels.js?v=20261010-1"></script><script src="k-copper-transport.js?v=20261106-k-olive-original" defer></script><script src="app.js?v=20261106-k-olive-original" defer></script><script src="notice.js?v=20261108-activity" defer></script><script src="ice.js?v=20261106-k-olive-original" defer></script>
- <script src="blue-gold.js?v=20261108-1" defer></script>
+ <meta name="theme-color" content="#f8f7f1" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#222b20" media="(prefers-color-scheme: dark)"><title>資金需求線上評估</title>
+ <link rel="stylesheet" href="base.css?v=20261106-k-olive-original"><link rel="stylesheet" href="notice.css?v=20261106-k-olive-original"><link rel="stylesheet" href="ice.css?v=20261106-k-olive-original"><link rel="stylesheet" href="copper.css?v=20261106-k-olive-original"><link rel="stylesheet" href="olive.css?v=20261106-k-olive-original">
+ <script src="../repo-pixels.js?v=20261010-1"></script><script src="k-copper-transport.js?v=20261106-k-olive-original" defer></script><script src="app.js?v=20261106-k-olive-original" defer></script><script src="notice.js?v=20261106-k-olive-original" defer></script><script src="ice.js?v=20261106-k-olive-original" defer></script>
 </head>
 <body><main class="app">
- <header class="corporate-hero">
-  <picture class="hero-picture"><source media="(max-width:600px)" srcset="glass-office-branded-mobile.webp"><img class="corporate-hero-photo" src="glass-office-branded.webp" width="1440" height="810" alt="帶有國連國際立體招牌的玻璃大樓，品牌情境示意" fetchpriority="high"></picture>
-  <div class="brand-bar"><div class="site-container brand-inner">
-   <a class="brand-wordmark" href="#loan-calculator" aria-label="國連國際有限公司，貸款試算"><span class="brand-mark" aria-hidden="true"></span><span class="brand-copy"><strong>國連國際</strong><small>GUOLIAN INTERNATIONAL</small></span></a>
-   <nav class="desktop-nav" aria-label="主要導覽"><a href="#loan-calculator">貸款試算</a><a href="#application-steps">申請流程</a><a href="#product-info">產品說明</a><a href="#faq">常見問題</a></nav>
-   <details class="mobile-menu"><summary aria-label="開啟導覽選單"><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#menu-2"/></svg></summary><nav aria-label="手機導覽"><a href="#loan-calculator">貸款試算</a><a href="#application-steps">申請流程</a><a href="#product-info">產品說明</a><a href="#faq">常見問題</a></nav></details>
-   <button type="button" id="back" aria-label="返回試算">‹</button>
-  </div></div>
-  <div class="site-container hero-copy">
-   <p class="hero-eyebrow">專業資金規劃服務</p>
-   <h1>資金規劃服務<br>從<em>清楚試算</em>開始</h1>
-   <ul class="hero-checks"><li><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#circle-check"/></svg>額度試算</li><li><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#circle-check"/></svg>線上申請</li><li><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#circle-check"/></svg>專人諮詢</li><li><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#circle-check"/></svg>流程透明</li></ul>
+ <header class="intro-module"><span class="company-name">國連國際有限公司</span><div class="top"><button id="back" aria-label="返回上一頁">‹</button><h1>3分鐘快速額度測算<span>｜急用周轉首選</span></h1></div><p>最高可貸 <strong>NT$3,000,000</strong>・免聯徵、免保人</p></header>
+ <section id="calculator" class="screen">
+  <div class="calculator-panel">
+   <div class="amount"><label for="amount">申請金額</label><strong id="amount-value">NT$ 100,000</strong><input id="amount" type="range" min="50000" max="3000000" step="50000" value="100000"><div class="limits"><span>NT$ 50,000</span><span>NT$ 3,000,000</span></div></div>
+   <div class="term-section"><h2>還款期數</h2><div class="terms choices"><button data-term="24">24期</button><button data-term="36">36期</button><button data-term="60" class="selected">60期</button><button data-term="84">84期</button><button data-term="120">120期</button><button data-term="144">144期</button><button data-term="180">180期</button><button data-term="240">240期</button><button data-term="300">300期</button><button data-term="360">360期</button></div></div>
+   <details class="purpose-section"><summary><span>貸款用途</span><strong id="purpose-value">日常資金調度</strong><b aria-hidden="true">⌄</b></summary><div class="purposes choices"><button class="selected">日常資金調度</button><button>整合既有貸款</button><button>自營生意備款</button><button>家庭臨時支出</button><button>設備工具添購</button><button>其他資金安排</button></div></details>
+   <div class="result"><div class="result-title">試算結果（僅供參考）</div><div class="payment-row"><div><p>每月應還</p><strong id="payment">NT$ 1,775</strong></div><div class="rate-block"><span>年利率</span><b id="rate">2.5%</b></div></div><details class="cost-details"><summary>查看試算明細<span aria-hidden="true">›</span></summary><div class="metrics"><div><span>總利息</span><b id="interest"></b></div><div><span>總還款</span><b id="total"></b></div></div></details></div>
   </div>
- </header>
- <div id="calculator" class="screen site-container corporate-home">
-  <section class="calculator-panel" id="loan-calculator" aria-labelledby="calculator-title">
-   <div class="calc-card-header"><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#calculator"/></svg><h2 id="calculator-title">貸款金額試算</h2><p>快速試算每月還款金額，選擇適合您的方案</p></div>
-   <div class="calc-body">
-    <div class="amount"><div class="amount-top"><label for="amount">貸款金額</label><strong id="amount-value">NT$ 100,000</strong></div><input id="amount" type="range" min="50000" max="3000000" step="50000" value="100000"><div class="limits"><span>NT$ 50,000</span><span>NT$ 3,000,000</span></div></div>
-    <details class="purpose-section"><summary><span>貸款用途</span><span class="purpose-control"><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#layers-subtract"/></svg><strong id="purpose-value">日常資金調度</strong><b aria-hidden="true">⌄</b></span></summary><div class="purposes choices"><button type="button" class="selected">日常資金調度</button><button type="button">整合既有貸款</button><button type="button">自營生意備款</button><button type="button">家庭臨時支出</button><button type="button">設備工具添購</button><button type="button">其他資金安排</button></div></details>
-    <div class="term-section"><h2>還款期數</h2><div class="term-control"><div class="terms choices term-primary"><button type="button" data-term="36">36期</button><button type="button" data-term="60" class="selected">60期</button><button type="button" data-term="84">84期</button><button type="button" data-term="120">120期</button></div><details id="more-terms"><summary>更多期數</summary><div class="terms choices term-extra"><button type="button" data-term="24">24期</button><button type="button" data-term="144">144期</button><button type="button" data-term="180">180期</button><button type="button" data-term="240">240期</button><button type="button" data-term="300">300期</button><button type="button" data-term="360">360期</button></div></details></div></div>
-    <div class="result"><div class="payment-row"><div class="estimate-main"><p>預估每月還款</p><strong id="payment">NT$ 1,775</strong></div><dl class="result-facts"><div><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#percentage"/></svg><dt>試算年利率</dt><dd><b id="rate">2.5%</b></dd></div><div><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#calendar"/></svg><dt>還款期數</dt><dd><b id="result-term">60 期</b></dd></div><div><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#coins"/></svg><dt>貸款金額</dt><dd><b id="result-amount">NT$ 100,000</b></dd></div></dl></div><details class="cost-details"><summary>查看試算明細<span aria-hidden="true">›</span></summary><div class="metrics"><div><span>總利息</span><b id="interest"></b></div><div><span>總還款</span><b id="total"></b></div></div></details></div>
-    <p class="disclaimer"><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#info-circle"/></svg>試算僅供參考，實際條件依審核結果為準。</p>
-    <button class="primary" id="apply" type="button">立即開始申請 <span aria-hidden="true">→</span></button>
-   </div>
-  </section>
-  <section class="activity-lane" aria-label="客戶動態">
-   <aside class="application-notice is-visible" aria-label="歷史送件紀錄，不代表核准" aria-live="off">
-    <span class="activity-label"><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#calendar"/></svg><strong>客戶動態</strong></span>
-    <span class="activity-record"><span class="capsule-person"><span id="notice-city">臺北市</span><i aria-hidden="true">・</i><strong id="notice-name">陳*華</strong></span><time class="capsule-status" id="notice-time" datetime="2026-10-29T03:50:58Z">已送件</time></span>
-    <strong class="notice-amount"><span id="notice-amount">50</span><small>萬</small></strong>
-   </aside>
-  </section>
-  <ul class="benefit-strip" aria-label="服務說明">
-   <li><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#shield-check"/></svg><div><strong>隱私保障</strong><small>加密傳輸資料</small></div></li>
-   <li><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#file-description"/></svg><div><strong>資訊透明</strong><small>試算條件清楚列出</small></div></li>
-   <li><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#headset"/></svg><div><strong>專員諮詢</strong><small>一對一確認需求</small></div></li>
-   <li><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#bolt"/></svg><div><strong>線上聯繫</strong><small>送件後透過 LINE 確認</small></div></li>
-  </ul>
-  <section id="application-steps" class="process-section" aria-labelledby="process-title">
-   <h2 id="process-title" class="section-heading">簡單 <em>3</em> 步，完成申請</h2>
-   <ol class="process-steps">
-    <li><span class="step-number" aria-hidden="true">1</span><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#calculator"/></svg><strong>選擇方案</strong><small>試算額度與期數</small></li>
-    <li><span class="step-number" aria-hidden="true">2</span><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#edit"/></svg><strong>填寫資料</strong><small>確認基本申請資料</small></li>
-    <li><span class="step-number" aria-hidden="true">3</span><svg class="ui-icon" aria-hidden="true"><use href="icons.svg#headset"/></svg><strong>LINE 聯繫</strong><small>專員確認後續流程</small></li>
-   </ol>
-  </section>
-  <section id="product-info" class="info-section"><h2>產品說明</h2><p>可先用 5 萬至 300 萬試算資金需求，按金額與期數查看預估月付。試算不代表核准，實際可辦額度、利率與期數以審核為準。</p></section>
-  <section id="faq" class="info-section"><h2>常見問題</h2><details><summary>試算金額就是核准額度嗎？</summary><p>不是。試算是依所選金額、期數和假設利率計算的參考值。</p></details><details><summary>送出申請後，下一步是什麼？</summary><p>加入 LINE 後請主動傳送申請姓名，方便專員核對並聯繫。</p></details><details><summary>試算需要先提供個人資料嗎？</summary><p>不需要。可先試算，再決定是否填寫資料。</p></details></section>
-  <footer class="site-footer">國連國際有限公司</footer>
- </div>
- <section id="application" class="screen site-container" hidden>
+  <p class="disclaimer">以上試算僅供參考，實際額度、利率、期數及結果依最終評估為準。</p>
+  <div class="apply-dock"><aside class="application-notice" aria-label="客戶申請紀錄，非核貸結果"><span class="capsule-person"><span id="notice-city">臺北市</span><strong id="notice-name">陳*華</strong></span><span class="capsule-status" id="notice-time">已完成申請</span><strong class="notice-amount"><span id="notice-amount">50</span><small>萬</small></strong></aside><button class="primary" id="apply">立即申請貸款 <span aria-hidden="true">›</span></button></div>
+ </section>
+ <section id="application" class="screen" hidden>
   <div class="application-heading"><h2>填寫申請資料</h2><p>請填寫本人真實資料，方便專員接續確認。</p></div>
   <form id="lead-form" name="lead-form" class="application-workspace" novalidate>
    <details id="amount-editor" class="amount-editor" open><summary><div><span>需求金額</span><strong id="summary">5萬-10萬</strong></div><span class="edit-amount">修改 <b aria-hidden="true">⌄</b></span></summary><div class="bands"><button type="button" data-band="5萬-10萬">5萬-10萬</button><button type="button" data-band="10萬-30萬">10萬-30萬</button><button type="button" data-band="30萬-50萬">30萬-50萬</button><button type="button" data-band="50萬以上">50萬以上</button></div></details>
@@ -74,5 +32,5 @@
    <div class="form-submit"><button type="submit" class="primary" id="next">立即送件・確認可辦額度</button></div>
   </form>
  </section>
- <section id="success" class="screen site-container" tabindex="-1" hidden><div class="card success"><div class="check">✓</div><h1>資料已送出<br>還差最後一步</h1><p class="preview-safety" hidden>本地預覽：未送出真實資料，不會開啟 LINE。</p><p>請加入 LINE 並主動傳送姓名，專員收到後才能接續確認。</p><div class="summary"><span>進入 LINE 後請傳送</span><strong id="line-name-to-send"></strong></div><a class="line" id="line-add-button" href="#" target="_blank" rel="noopener">LINE　複製姓名並加入 LINE</a><p id="copy-line-name-status" role="status" aria-live="polite">點擊按鈕時會先嘗試複製姓名。</p></div></section>
+ <section id="success" class="screen" tabindex="-1" hidden><div class="card success"><div class="check">✓</div><h1>資料已送出<br>還差最後一步</h1><p>請加入 LINE 並主動傳送姓名，專員收到後才能接續確認。</p><div class="summary"><span>進入 LINE 後請傳送</span><strong id="line-name-to-send"></strong></div><a class="line" id="line-add-button" href="#" target="_blank" rel="noopener">LINE　複製姓名並加入 LINE</a><p id="copy-line-name-status" role="status" aria-live="polite">點擊按鈕時會先嘗試複製姓名。</p></div></section>
 </main></body></html>
