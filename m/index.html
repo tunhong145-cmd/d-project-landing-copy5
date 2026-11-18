@@ -2,12 +2,13 @@
 <html lang="zh-Hant">
 <head>
  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
- <meta name="theme-color" content="#eef3f8"><title>資金需求線上評估</title>
+ <meta name="theme-color" content="#f0d7ca" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#29201d" media="(prefers-color-scheme: dark)"><title>資金需求線上評估</title>
  <link rel="stylesheet" href="base.css?v=20261106-mi-unified"><link rel="stylesheet" href="notice.css?v=20261106-mi-unified"><link rel="stylesheet" href="ice.css?v=20261106-mi-unified">
+ <link rel="stylesheet" href="optical-blue.css?v=20261108-1"><link rel="stylesheet" href="copper-dawn.css?v=20261117-1">
  <script src="../repo-pixels.js?v=20261010-1"></script><script src="app.js?v=20261111-warning-label" defer></script><script src="notice.js?v=20261106-mi-unified" defer></script><script src="ice.js?v=20261106-mi-unified" defer></script>
 </head>
-<body><main class="app">
- <header class="intro-module"><span class="company-name">至樂國際有限公司</span><div class="top"><button id="back" aria-label="返回上一頁">‹</button><h1>3分鐘快速額度測算<span>｜急用周轉首選</span></h1></div><p>最高可貸 <strong>NT$3,000,000</strong>・免聯徵、免保人</p></header>
+<body><main class="app copper-dawn">
+ <header class="intro-module"><img class="optical-hero-image" src="copper-dawn-hero.webp" width="1040" height="693" fetchpriority="high" alt=""><div class="copper-brand"><span class="company-name">至樂國際有限公司</span><span class="copper-service">線上額度評估</span></div><div class="top"><button id="back" aria-label="返回上一頁">‹</button><h1>快速額度試算<span>急用周轉首選</span></h1></div><p>需求金額最高可選 <strong>NT$3,000,000</strong></p></header>
  <section id="calculator" class="screen">
   <div class="calculator-panel">
    <div class="amount"><label for="amount">申請金額</label><strong id="amount-value">NT$ 100,000</strong><input id="amount" type="range" min="50000" max="3000000" step="50000" value="100000"><div class="limits"><span>NT$ 50,000</span><span>NT$ 3,000,000</span></div></div>
@@ -15,8 +16,8 @@
    <details class="purpose-section"><summary><span>貸款用途</span><strong id="purpose-value">日常資金調度</strong><b aria-hidden="true">⌄</b></summary><div class="purposes choices"><button class="selected">日常資金調度</button><button>整合既有貸款</button><button>自營生意備款</button><button>家庭臨時支出</button><button>設備工具添購</button><button>其他資金安排</button></div></details>
    <div class="result"><div class="result-title">試算結果（僅供參考）</div><div class="payment-row"><div><p>每月應還</p><strong id="payment">NT$ 1,775</strong></div><div class="rate-block"><span>年利率</span><b id="rate">2.5%</b></div></div><details class="cost-details"><summary>查看試算明細<span aria-hidden="true">›</span></summary><div class="metrics"><div><span>總利息</span><b id="interest"></b></div><div><span>總還款</span><b id="total"></b></div></div></details></div>
   </div>
-  <p class="disclaimer">以上試算僅供參考，實際額度、利率、期數及結果依最終評估為準。</p>
-  <div class="apply-dock"><aside class="application-notice" aria-label="客戶申請紀錄，非核貸結果"><span class="capsule-person"><span id="notice-city">臺北市</span><strong id="notice-name">陳*華</strong></span><span class="capsule-status" id="notice-time">已完成申請</span><strong class="notice-amount"><span id="notice-amount">50</span><small>萬</small></strong></aside><button class="primary" id="apply">立即申請貸款 <span aria-hidden="true">›</span></button></div>
+  <div class="apply-dock"><div class="optical-activity-slot"><aside class="application-notice" aria-label="歷史客戶申請紀錄，非核貸結果"><span class="optical-activity-label">客戶動態</span><span class="optical-activity-copy"><span class="capsule-person"><span id="notice-city">臺北市</span><strong id="notice-name">陳*華</strong></span><span class="capsule-status" id="notice-time">已完成申請</span></span><strong class="notice-amount"><span id="notice-amount">50</span><small>萬</small></strong></aside></div><button class="primary" id="apply">立即申請貸款 <span class="optical-arrow" aria-hidden="true">→</span></button></div>
+  <p class="disclaimer">利率與期數為試算假設。實際額度、利率、期數及結果依個別評估為準。</p>
  </section>
  <section id="application" class="screen" hidden>
   <div class="application-heading"><h2>填寫申請資料</h2><p>請填寫本人真實資料，方便專員接續確認。</p></div>
